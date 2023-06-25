@@ -1,0 +1,22 @@
+
+
+char firstUniqueChar(const std::string& str) {
+    std::unordered_map<char, int> charFreq;
+
+    // Count the frequency of each character
+    for (char ch : str) {
+        charFreq[ch]++;
+    }
+
+    // Find the first unique character
+    for (char ch : str) {
+        if (charFreq[ch] == 1) {
+            return ch;
+        }
+    }
+
+    // If no unique character is found, return a default value
+    return '\0';
+}
+
+
